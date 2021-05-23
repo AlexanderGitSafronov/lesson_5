@@ -8,16 +8,22 @@
 </head>
 <body>
     <script>
-      
-      function padString(str=String, len=Number, symbol=String) {
-        if (str.length >= len) {
-            return str;
-        } else {
-            return str + symbol.repeat(len-str.length);
-        }
-    }
 
-   console.log(padString("hello", 6, "*"))
+   function padString(orString, resString, symbol) {
+       if (orString.length >= resString) {
+           return orString;
+       }
+       var orr = resString - orString.length;
+       var symbolA = '';
+       for (var i=0; i < orr; i++) {
+           symbolA += symbol;
+       }
+       return orString + symbolA;
+   }
+
+   console.log(padString('hello', 8, '*'))
+
+
     </script>
 </body>
 </html>

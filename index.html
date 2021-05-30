@@ -9,7 +9,7 @@
 <body>
     <script>
 
-   function padString(orString, resString, symbol) {
+   function padString(orString, resString, symbol, toStart) {
        if (orString.length >= resString) {
            return orString;
        }
@@ -18,10 +18,15 @@
        for (var i=0; i < orr; i++) {
            symbolA += symbol;
        }
+       if (toStart) {
+           return symbolA + orString
+       }
        return orString + symbolA;
    }
 
    console.log(padString('hello', 8, '*'))
+   console.log(padString('hello', 3, '*'))
+   console.log(padString('hello', 6, '*', true))
 
 
     </script>
